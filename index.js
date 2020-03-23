@@ -323,7 +323,8 @@ function getOlderCars(inventory, year) {
 function getGermanCars(inventory) {
   let german = [];
   for (let i = 0; i < inventory.length; i++) {
-		if (inventory[i].car_make === "Audi", "Mercedes-Benz", "Volkswagen", "BMW"){
+		let specific = inventory[i].car_make;
+		if (specific === "Audi" || specific === "Mercedes-Benz" || specific === "Volkswagen" || specific === "BMW"){
       german.push(inventory[i]);
     }
   }
@@ -346,8 +347,8 @@ function getGermanCars(inventory) {
 function carMaker(num) {
   let meter = {
     odometer: num,
-    drive: function (mile) {
-      return num + mile;
+    drive: function (distance) {
+      return num + distance;
     },
   }
 }
