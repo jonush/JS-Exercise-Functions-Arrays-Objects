@@ -348,9 +348,10 @@ function carMaker(num) {
   let meter = {
     odometer: num,
     drive: function (distance) {
-      return num + distance;
+      return this.odometer += distance;
     },
   }
+  return meter;
 }
 
 /// ////// END OF CHALLENGE /////////
